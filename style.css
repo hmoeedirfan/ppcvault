@@ -1,0 +1,103 @@
+/* Base + Animations  */
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-height: max(884px, 100dvh);
+    background: #040F39;
+}
+
+/* For Smooth Scrolling */
+/* html {
+            scroll-behavior: smooth;
+        } */
+
+/* Fade-in Up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .7s var(--ease, cubic-bezier(.22, .61, .36, 1)), transform .7s var(--ease, cubic-bezier(.22, .61, .36, 1));
+}
+
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Subtle card float on hover */
+.card {
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background-color .35s ease;
+    will-change: transform, box-shadow;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px -8px rgba(26, 43, 109, .55), 0 12px 12px -10px rgba(4, 15, 57, .45);
+    border-color: #2B3D86;
+}
+
+/* Glow ring on focus for accessibility */
+.focus-ring:focus-visible {
+    outline: 3px solid #2B3D86;
+    outline-offset: 2px;
+}
+
+/* Nav active pill handled in JS + utility below as fallback 
+        .nav-link.active {
+            background-color: #ffffff;
+            color: #040F39 !important;
+        } */
+
+.nav-link.active {
+    background-color: #F59E0B;
+    /* Amber background */
+    color: #ffffff !important;
+    /* Slate text */
+}
+
+.fade {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.slide.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide.out-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.slide.out-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
