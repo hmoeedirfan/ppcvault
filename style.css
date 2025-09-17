@@ -101,3 +101,12 @@ video {
     max-width: 100%;
     height: auto;
 }
+/* fade-in helper */
+.fade-in-up { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in-up.is-visible { opacity: 1; transform: translateY(0); }
+
+/* testimonial slide classes (simple) */
+#testimonial-card { transition: transform .45s ease, opacity .35s ease; }
+#testimonial-card.show { opacity: 1; transform: translateX(0); }
+#testimonial-card.out-left { opacity: 0; transform: translateX(-30px); }
+#testimonial-card.out-right { opacity: 0; transform: translateX(30px); }
